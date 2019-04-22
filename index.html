@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Apple(weight) {
+        this.weight = weight;
+        this.setWeight = function () {
+            this.weight = weight;
+        };
+        this.getWeight = function (){
+            return this.weight;
+        };
+
+        this.decrease = function () {
+            if(this.weight>0)
+            return this.weight --;
+        };
+        this.isEmpty = function () {
+            if (this.weight === 0) {
+                return true;
+            }else
+                return false;
+        };
+    }
+
+    function Human(name, gender, weight) {
+        this.name = "";
+        this.gender = "";
+        this.weight = weight;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function () {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function () {
+            this.weight = weight;
+        };
+        this.isMale = function () {
+            if (this.gender === "male")
+                return true;
+        };
+        this.checkApple = function () {
+            if(apple.weight ===0){
+                return false;
+            }else {
+                return true;
+            }
+        };
+        this.eat = function () {
+            if (apple.weight >0){
+                this.weight++;
+                console.log(this.name + " said: 'Yummy' ");
+                console.log(this.name + "'s weight " + this.weight);
+                apple.decrease();
+                console.log("apple's weight " + apple.weight);
+            }else {
+                console.log("no");
+            }
+
+        };
+    }
+
+    let apple = new Apple(  10);
+    let adam = new Human("Adam", "male", 70);
+    let eva = new Human("Eva", "female", 48);
+
+    adam.getName();
+    adam.setName();
+    adam.getWeight();
+    adam.setWeight();
+    adam.isMale();
+
+    eva.getName();
+    eva.setName();
+    eva.getWeight();
+    eva.setWeight();
+    eva.isMale();
+
+    apple.setWeight();
+    apple.getWeight();
+    console.log( apple.weight)
+    while (apple.weight >0) {
+        console.log(apple.isEmpty());
+        adam.checkApple();
+        adam.eat();
+        eva.eat();
+    }
+</script>
+
+</body>
+</html>
